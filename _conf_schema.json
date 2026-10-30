@@ -1,0 +1,98 @@
+{
+  "bot_name": {
+    "description": "机器人名称",
+    "type": "string",
+    "default": "AstrBot",
+    "hint": "页头、默认标题、默认欢迎语和底部文案使用此名称；鲸鱼娘仅作为装饰形象。"
+  },
+  "title": {
+    "description": "菜单标题",
+    "type": "string",
+    "default": "",
+    "hint": "留空自动显示“机器人名称的帮助菜单”，也可填写独立标题。"
+  },
+  "subtitle": {
+    "description": "菜单欢迎语",
+    "type": "string",
+    "default": "",
+    "hint": "留空自动跟随机器人名称，也可自定义。"
+  },
+  "extra_text": {
+    "description": "额外文字说明",
+    "type": "text",
+    "default": "",
+    "hint": "手动填写菜单末尾的补充说明，可输入多行文字、帮助文档网址、群规或联系方式。默认留空，不内置任何文档链接或说明标签。仅显示在本次请求的最后一页；图片下方同时提供可复制文字，合并转发放在最后一个节点。保存后下次请求生效。"
+  },
+  "background_image": {
+    "description": "自定义菜单背景图",
+    "type": "file",
+    "default": [],
+    "file_types": ["png", "jpg", "jpeg", "webp"],
+    "hint": "上传一张图片并保存；多张时使用列表第一张。等比例居中裁切铺满每页，建议使用竖图。删除全部图片并保存后恢复默认背景，保留页头鲸鱼娘与白色指令卡片。单图不超过 32 MiB、2400 万像素。"
+  },
+  "background_fade": {
+    "description": "背景淡化程度",
+    "type": "int",
+    "default": 60,
+    "slider": {"min": 0, "max": 100, "step": 1},
+    "hint": "仅对自定义背景生效。0 为原图，100 为纯白；默认 60，数值越高文字越清楚。保存后下次请求菜单生效。"
+  },
+  "commands_per_page": {
+    "description": "每页指令数量",
+    "type": "int",
+    "default": 12,
+    "hint": "支持 6–24 条，默认 12 条。帮助或菜单默认发送全部页，QQ OneBot 合并为一条聊天记录；帮助 2 只发第二页。"
+  },
+  "respond_to_bare_help": {
+    "description": "直接发送帮助也响应",
+    "type": "bool",
+    "default": true,
+    "hint": "除 /菜单、/帮助、/help 外，直接发送 帮助、help、菜单、指令、功能菜单 等入口也响应，支持文字、搜索与分页。不匹配句子中间的帮助二字。关闭后仅按 AstrBot 唤醒规则响应标准入口。"
+  },
+  "auto_discover": {
+    "description": "自动识别自定义消息指令",
+    "type": "bool",
+    "default": true,
+    "hint": "首次菜单按需静态识别自定义监听器及标准根指令内部的子入口，支持明确消息分支、命令表、简单正则及本地分发链；之后复用缓存，启动不扫描。源码、相关配置变化或插件重载后重新识别。排除可识别的管理权限入口；无法确认时不猜指令，不执行插件业务代码。"
+  },
+  "include_builtin": {
+    "description": "同时展示 AstrBot 内置指令",
+    "type": "bool",
+    "default": false,
+    "hint": "默认只展示已安装插件的指令。开启后也会隐藏管理权限和禁用的内置指令。"
+  },
+  "hidden_plugins": {
+    "description": "隐藏整个功能（插件）",
+    "type": "list",
+    "default": [],
+    "options": [],
+    "labels": [],
+    "hint": "从下拉框多选插件，隐藏选中插件的全部指令。选项自动读取已安装插件；保存后下次菜单立即生效。只控制菜单展示。"
+  },
+  "hidden_groups": {
+    "description": "隐藏子功能（指令组）",
+    "type": "list",
+    "default": [],
+    "options": [],
+    "labels": [],
+    "hint": "选择已注册指令组或自动识别的自定义入口，连同全部子入口和别名一起隐藏。标准指令组加载即显示；自定义入口首次请求菜单后补入。相同组名按所属插件区分。"
+  },
+  "hidden_commands": {
+    "description": "不在菜单展示的指令",
+    "type": "list",
+    "default": [],
+    "hint": "每行一个完整指令名，不含 /。支持匹配别名；子指令需写完整路径，例如 bili 登录。适合补充隐藏复杂内部权限指令。"
+  },
+  "extra_commands": {
+    "description": "补充公开功能入口（自动识别的兜底）",
+    "type": "list",
+    "default": [],
+    "hint": "通常无需手填；仅在动态路由或源码不可读时补充已确认的公开入口。每行 插件名::指令=简短说明，例如 astrbot_plugin_example::roll=掷骰子。无法绕过已识别的管理权限或标准指令禁用限制。"
+  },
+  "command_descriptions": {
+    "description": "自定义简短说明",
+    "type": "list",
+    "default": [],
+    "hint": "每行填写 指令=说明，例如 bili=查看 B 站视频信息。优先读取标准注册描述或处理函数文档；自动入口缺少说明时显示简短归属说明，不调用 AI 编造。"
+  }
+}
