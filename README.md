@@ -1,6 +1,6 @@
 # 小鲸鱼帮助菜单
 
-**v1.0.1 正式版** · AstrBot 通用帮助插件
+**v1.0.0 正式版** · AstrBot 通用帮助插件
 
 自动整理当前会话可用的插件公开指令，按插件分组展示。支持图片菜单、文字版、搜索、分页、QQ OneBot 合并转发、自定义背景和额外文字说明。
 
@@ -16,7 +16,7 @@
 https://github.com/muyuawa/astrbot_plugin_whalehelp
 ```
 
-也可以从 [Releases](https://github.com/muyuawa/astrbot_plugin_whalehelp/releases) 下载 `astrbot_plugin_whalehelp-v1.0.1.zip`，在插件管理中上传安装。手动安装时，将插件目录放入 `data/plugins/astrbot_plugin_whalehelp/`，并在 AstrBot 使用的 Python 环境安装 `requirements.txt`。
+也可以从 [Releases](https://github.com/muyuawa/astrbot_plugin_whalehelp/releases) 下载 `astrbot_plugin_whalehelp-v1.0.0.zip`，在插件管理中上传安装。手动安装时，将插件目录放入 `data/plugins/astrbot_plugin_whalehelp/`，并在 AstrBot 使用的 Python 环境安装 `requirements.txt`。
 
 插件版本为 `1.0.0`，标识为 `astrbot_plugin_whalehelp`，可沿用已有配置和上传背景。通用功能通过 AstrBot 消息组件发送图片或文字；QQ OneBot v11 另支持合并转发，其他平台使用逐页发送。
 
@@ -118,7 +118,7 @@ astrbot_plugin_example::游戏 帮助=查看游戏玩法
 
 ## 开发验证
 
-仓库和安装包只保留运行文件及使用文档；[Releases](https://github.com/muyuawa/astrbot_plugin_whalehelp/releases) 的 `astrbot_plugin_whalehelp-v1.0.1-source.zip` 另含测试、开发依赖和离线检查工具。解压源码包，在其中的插件目录安装 `requirements-dev.txt` 后运行：
+仓库和安装包只保留运行文件及使用文档；[Releases](https://github.com/muyuawa/astrbot_plugin_whalehelp/releases) 的 `astrbot_plugin_whalehelp-v1.0.0-source.zip` 另含测试、开发依赖和离线检查工具。解压源码包，在其中的插件目录安装 `requirements-dev.txt` 后运行：
 
 ```bash
 python -m pytest -c pyproject.toml -q

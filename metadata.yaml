@@ -2,7 +2,7 @@ name: astrbot_plugin_whalehelp
 display_name: 小鲸鱼帮助
 short_desc: 支持自定义背景和额外说明的通用帮助菜单
 desc: 通用帮助菜单，自动整理插件公开指令，支持自定义背景、额外文字说明、功能排除、搜索、分页、文字版和合并转发。
-version: 1.0.1
+version: 1.0.0
 author: muyuawa
 repo: https://github.com/muyuawa/astrbot_plugin_whalehelp
 astrbot_version: ">=4.13.0,<5"
