@@ -2,7 +2,6 @@
 
 import hashlib
 import json
-import logging
 import struct
 import time
 import uuid
@@ -11,6 +10,7 @@ from functools import lru_cache
 from itertools import groupby
 from pathlib import Path
 
+from astrbot.api import logger
 from PIL import Image, ImageDraw, ImageFilter, ImageFont, ImageOps
 from pylopdf_fonts_zh_cn import sans_path
 
@@ -22,7 +22,6 @@ BLUE = "#496F96"
 WIDTH = 1080
 MARGIN = 56
 CARD_WIDTH = 472
-logger = logging.getLogger("astrbot")
 
 
 @lru_cache(maxsize=32)
@@ -290,8 +289,8 @@ class MenuRenderer:
                 warning = (str(background), str(exc))
                 if warning != self._last_background_warning:
                     logger.warning(
-                        "WhaleHelp: 自定义背景无法读取，使用默认背景 (%s)",
-                        type(exc).__name__,
+                        "WhaleHelp: 自定义背景无法读取，使用默认背景 "
+                        f"({type(exc).__name__})"
                     )
                     self._last_background_warning = warning
         canvas = Image.new("RGBA", (WIDTH, height))
